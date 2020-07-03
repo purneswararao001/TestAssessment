@@ -47,9 +47,11 @@ public class Pearson {
         String url = driver.getCurrentUrl();
         String[] strings = url.split("/");
         for (String s : strings) {
-            if (s.contains("Mastering-Physics-v3-summary.pdf")) {
-                driver.quit();
+            if (s.equalsIgnoreCase("Mastering-Physics-v3-summary.pdf")) {
+                System.out.println("Comparision done");
+                break;
             }
         }
+        driver.quit();
     }
 }
