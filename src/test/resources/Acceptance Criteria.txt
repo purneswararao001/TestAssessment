@@ -1,0 +1,17 @@
+Phase1: Q1 Answers:
+
+General Quesries:
+
+1. Require the application URL
+2. Require the fields displayed in the Login Screen
+
+
+Acceptance Criteria 1 - Queries:
+1. On successful login, which screen to be displayed
+2. On successful login, what message should be displayed
+
+
+Acceptance Criteria 2 - Queries:
+1. On un-successful login, what error message should be displayed
+2. On un-successful login - multiple attempts, will the user be locked
+3. If the user is locked after 'n' un-successful attempts, hat error message should be displayed
