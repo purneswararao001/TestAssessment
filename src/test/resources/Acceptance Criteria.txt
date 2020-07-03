@@ -5,11 +5,9 @@ General Quesries:
 1. Require the application URL
 2. Require the fields displayed in the Login Screen
 
-
 Acceptance Criteria 1 - Queries:
 1. On successful login, which screen to be displayed
 2. On successful login, what message should be displayed
-
 
 Acceptance Criteria 2 - Queries:
 1. On un-successful login, what error message should be displayed
