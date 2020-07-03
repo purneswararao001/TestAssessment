@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Pearson {
     public static Logger logger = Logger.getLogger(Pearson.class);
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args){
         String path = "../chromedriver.exe";
         System.setProperty("webdriver.chrome.driver", path);
         /* initiate the driver */
