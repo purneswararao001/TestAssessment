@@ -24,7 +24,7 @@ public class Pearson {
         js.executeScript("document.getElementById('search-box-input').value='test'");
         js.executeScript("document.getElementsByClassName('search-box-icon')[0].click()");
         js.executeScript("window.scrollBy(0,3000)");
-        Thread.sleep(10000);
+        js.executeAsyncScript("window.setTimeout(arguments[arguments.length-1],10000)");
         String getSearchResults1 = driver.findElement(By.xpath("//div[@class='st-results-container']/p")).getText();
         /*Validate search results 1 -10 */
         if (getSearchResults1.contains("1 - 10")) {
@@ -32,7 +32,7 @@ public class Pearson {
         }
         WebElement element = driver.findElement(By.xpath("//a[text()='2']"));
         js.executeScript("arguments[0].click();", element);
-        Thread.sleep(10000);
+        js.executeAsyncScript("window.setTimeout(arguments[arguments.length-1],10000)");
         String getSearchResults2 = driver.findElement(By.xpath("//div[@class='st-results-container']/p")).getText();
         /*Validate search results 11 - 20 */
         if (getSearchResults2.contains("11 - 20")) {
@@ -42,8 +42,8 @@ public class Pearson {
         WebElement element1 = driver.findElement(By.xpath("(//a[@class='productItem__name'])[3]"));
         js.executeScript("arguments[0].click();", element1);
         String getUrl = element1.getAttribute("href");
+        js.executeAsyncScript("window.setTimeout(arguments[arguments.length-1],10000)");
         System.out.println(getUrl);
-        Thread.sleep(10000);
         String url = driver.getCurrentUrl();
         String[] strings = url.split("/");
         for (String s : strings) {
