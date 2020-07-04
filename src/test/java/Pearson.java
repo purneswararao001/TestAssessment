@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Pearson {
     public static Logger logger = Logger.getLogger(Pearson.class);
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         String path = "../chromedriver.exe";
         System.setProperty("webdriver.chrome.driver", path);
         /* initiate the driver */
@@ -45,13 +45,22 @@ public class Pearson {
         js.executeAsyncScript("window.setTimeout(arguments[arguments.length-1],10000)");
         System.out.println(getUrl);
         String url = driver.getCurrentUrl();
-        String[] strings = url.split("/");
-        for (String s : strings) {
-            if (s.equalsIgnoreCase("Mastering-Physics-v3-summary.pdf")) {
-                System.out.println("Comparision done");
-                break;
-            }
+        String mainWindow = driver.getWindowHandle();
+        // open a new tab
+        js.executeScript("window.open()");
+        // switch to new tab
+        // Switch to new window opened
+        for (String winHandle : driver.getWindowHandles()) {
+            driver.switchTo().window(winHandle);
         }
+        // navigate to chrome downloads
+        driver.get("chrome://downloads");
+        js.executeAsyncScript("window.setTimeout(arguments[arguments.length-1],10000)");
+        // close the downloads tab2
+        driver.close();
+        // switch back to main window
+        driver.switchTo().window(mainWindow);
         driver.quit();
     }
 }
+
